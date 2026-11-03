@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span>⌘</span>
+                <h1>GitHub Explorer</h1>
+            </div>
+            <p>Explore developers and their open-source projects</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <h2>Discover GitHub Developers</h2>
+            <p>Enter a GitHub username to explore their profile.</p>
+
+            <form id="searchForm" class="search-box">
+                <input
+                    type="text"
+                    id="usernameInput"
+                    placeholder="Enter GitHub username..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="searchBtn">
+                    Search
+                </button>
+            </form>
+        </section>
+
+        <!-- Message -->
+        <div id="message" class="message"></div>
+
+        <!-- Loading -->
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Fetching GitHub data...</p>
+        </div>
+
+        <!-- Main Content -->
+        <main id="mainContent" class="hidden">
+
+            <!-- Profile -->
+            <section class="profile-card">
+
+                <img id="avatar" src="" alt="GitHub Avatar">
+
+                <div class="profile-info">
+                    <h2 id="name">Developer Name</h2>
+                    <a id="profileUsername" href="#" target="_blank">
+                        @username
+                    </a>
+
+                    <p id="bio">Developer bio goes here.</p>
+
+                    <div class="profile-details">
+                        <span id="location"></span>
+                        <!-- <a id="blog" href="#" target="_blank"></a> -->
+                    </div>
+
+                    <p id="joinedDate"></p>
+                </div>
+
+                <a id="profileLink" href="#" target="_blank"
+                    class="github-btn">
+                    View GitHub Profile ↗
+                </a>
+
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-icon">📁</span>
+                    <h3 id="repoCount">0</h3>
+                    <p>Repositories</p>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon">👥</span>
+                    <h3 id="followers">0</h3>
+                    <p>Followers</p>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon">➡️</span>
+                    <h3 id="following">0</h3>
+                    <p>Following</p>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon">⭐</span>
+                    <h3 id="totalStars">0</h3>
+                    <p>Total Stars</p>
+                </div>
+
+            </section>
+
+            <!-- Languages -->
+            <section class="section">
+                <div class="section-heading">
+                    <h2>Programming Languages</h2>
+                    <span>By repository count</span>
+                </div>
+
+                <div id="languagesContainer" class="languages-container">
+                </div>
+            </section>
+
+            <!-- Repositories -->
+            <section class="section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Top Repositories</h2>
+                        <p>Sorted by stars</p>
+                    </div>
+                    <span id="repoTotal"></span>
+                </div>
+
+                <div id="repositoriesContainer" class="repositories-grid">
+                </div>
+
+
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Built with HTML, CSS & JavaScript | Powered by GitHub API</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
